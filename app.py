@@ -6,7 +6,7 @@ from urllib.parse import quote_plus, urlencode
 # Using the Auth0 Python SDK to handle authentication in a Flask app
 # flask pymongo for mongodb
 from authlib.integrations.flask_client import OAuth
-from flask_pymongo import PyMongo
+from flask_pymongo import pymongo
 
 # Flask as well as env from dotenv to load our environment variables
 from dotenv import find_dotenv, load_dotenv
@@ -25,7 +25,7 @@ app = Flask(__name__)
 app.secret_key = env.get("APP_SECRET_KEY")
 
 # Mongo configuration and connecting with our database
-mongo = PyMongo(app, uri=env.get("MONGO_URI"))
+mongo = pymongo(app, uri=env.get("MONGO_URI"))
 
 # Auth0 configuration
 oauth = OAuth(app)
