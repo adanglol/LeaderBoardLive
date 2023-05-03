@@ -1,6 +1,5 @@
 # Where we will hide files and sensitive information on github
 .env
-/Flask
 /LBL
 /__pycache__
 test.py
