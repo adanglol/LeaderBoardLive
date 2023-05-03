@@ -2,6 +2,7 @@
 import json
 from os import environ as env
 from urllib.parse import quote_plus, urlencode
+# print('hello')
 
 # Using the Auth0 Python SDK to handle authentication in a Flask app
 # flask pymongo for mongodb
@@ -23,9 +24,11 @@ if ENV_FILE:
 # Flask configuration
 app = Flask(__name__)
 app.secret_key = env.get("APP_SECRET_KEY")
+# print(app.secret_key)
 
 # Mongo configuration and connecting with our database
 mongo = PyMongo(app, uri=env.get("MONGO_URI"))
+# print(env.get("MONGO_URI"))
 
 # Auth0 configuration
 oauth = OAuth(app)
