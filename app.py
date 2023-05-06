@@ -25,12 +25,12 @@ if ENV_FILE:
 app = Flask(__name__)
 app.secret_key = env.get("APP_SECRET_KEY")
 
-mongo_uri = env.get("MongoDBConnection")
-if not mongo_uri:
-    mongo_uri = env.get("MongoDBConnection")
+# mongo_uri = env.get("MongoDBConnection")
+# if not mongo_uri:
+#     mongo_uri = env.get("MongoDBConnection")
 
 # Mongo configuration and connecting with our database
-mongo = PyMongo(app, uri=mongo_uri)
+mongo = PyMongo(app, uri= env.get("MONGO_URI"))
 # print(env.get("MONGO_URI"))
 
 # Auth0 configuration
